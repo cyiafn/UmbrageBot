@@ -1,4 +1,4 @@
-from tok import getTok
+import os
 
 import discord
 import logging
@@ -96,4 +96,4 @@ class MyClient(discord.Client):
 
 keep_alive()
 client = MyClient(intents =intents)
-client.run(getTok())
+client.run(os.environ.get('SECRET_TOKEN'))
