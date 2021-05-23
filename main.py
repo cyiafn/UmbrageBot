@@ -1,92 +1,97 @@
 from tok import getTok
 
 import discord
-import time
 import logging
 
+logging.basicConfig(filename='example.log', filemode='w', level=logging.DEBUG)
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.members = True
+intents.messages = True
+intents.guilds = True
+intents.reactions = True
 
-@client.event
-async def on_ready():
-    print('We have logged in as {0.user}'.format(client))
+class MyClient(discord.Client):
 
-@client.event
-async def on_member_join(member):
-    print("member join")
-    role = discord.utils.get(member.server.roles, id="844532858118733824")
-    await client.add_roles(member, role)
+    
+    async def on_ready(self):
+        print('Logged on as {0}!'.format(self.user))
 
-@client.event
-async def on_message(message):
-    if message.channel.id == '844558702103232563':
-        print("meember msg")
-        role = discord.utils.get(message.author.server.roles, id="844532858118733824")
-        if role in message.author.roles:
-            print("adding guest")
-            role2 = discord.utils.get(message.author.server.roles, id="844574498975514624")
-            await client.remove_roles(message.author, role)
-            await client.add_roles(message.author, role2)
+    async def on_member_join(self, member):
+        print("member join")
+        role = discord.utils.get(member.guild.roles, id=844532858118733824)
+        await member.add_roles(role)
+
+    async def on_message(self,message):
+        if message.channel.id == 844558702103232563:
+            print("guild app")
+            role = discord.utils.get(message.author.guild.roles, id=844532858118733824)
+            if role in message.author.roles:
+                print("adding wait list")
+                role2 = discord.utils.get(message.author.guild.roles, id=844574498975514624)
+                await message.author.remove_roles(role)
+                await message.author.add_roles(role2)
+
+    async def on_raw_reaction_add(self, RawReactionActionEvent):
+        
+        usr = RawReactionActionEvent.member
+        emo = RawReactionActionEvent.emoji.name
+        msg = RawReactionActionEvent.message_id
+        if msg == 846001584516104292:
+            print("reaction added")
+            umbrage = discord.utils.get(usr.guild.roles, id=843479518357880842)
+            if emo == "🍰":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(usr.guild.roles, id=843555520295469067)
+                    await usr.add_roles(role)
+            elif emo == "🦑":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(usr.guild.roles, id=845947787673206794)
+                    await usr.add_roles(role)
+            elif emo == "🦁":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(usr.guild.roles, id=845947449540739092)
+                    await usr.add_roles(role)
+            elif emo == "🔪":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(usr.guild.roles, id=845947863807688716)
+                    await usr.add_roles(role)
+            elif emo == "👻":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(usr.guild.roles, id=845947323845836840)
+                    await usr.add_roles(role)
+
+    async def on_raw_reaction_remove(self, RawReactionActionEvent):
+        
+        usr = RawReactionActionEvent.user_id
+        emo = RawReactionActionEvent.emoji.name
+        msg = RawReactionActionEvent.message_id
+        guild = self.get_guild(RawReactionActionEvent.guild_id)
+        usr = guild.get_member(usr)
+        if msg == 846001584516104292:
+            print("reaction removed")
+            umbrage = discord.utils.get(guild.roles, id=843479518357880842)
+            if emo == "🍰":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(guild.roles, id=843555520295469067)
+                    await usr.remove_roles(role)
+            elif emo == "🦑":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(guild.roles, id=845947787673206794)
+                    await usr.remove_roles(role)
+            elif emo == "🦁":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(guild.roles, id=845947449540739092)
+                    await usr.remove_roles(role)
+            elif emo == "🔪":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(guild.roles, id=845947863807688716)
+                    await usr.remove_roles(role)
+            elif emo == "👻":
+                if umbrage in usr.roles:
+                    role = discord.utils.get(guild.roles, id=845947323845836840)
+                    await usr.remove_roles(role)
 
 
-@client.event
-async def on_reaction_add(reaction, user):
-    print("Added reaction")
-    if reaction.message.id == "846001584516104292":
-        umbrage = discord.utils.get(user.server.roles, id="843479518357880842")
-        if reaction.emoji == "🍰":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="843555520295469067")
-                await client.add_roles(user, role)
-        elif reaction.emoji == "🦑":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="845947787673206794")
-                await client.add_roles(user, role)
-        elif reaction.emoji == "🦁":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="845947449540739092")
-                await client.add_roles(user, role)
-        elif reaction.emoji == "🔪":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="845947863807688716")
-                await client.add_roles(user, role)
-        elif reaction.emoji == "👻":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="845947323845836840")
-                await client.add_roles(user, role)
-
-@client.event
-async def on_reaction_remove(reaction, user):
-    print("reaction remove")
-    if reaction.message.id == "846001584516104292":
-        umbrage = discord.utils.get(user.server.roles, id="843479518357880842")
-        if reaction.emoji == "🍰":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="843555520295469067")
-                if role in user.roles:
-                    await client.remove_roles(user, role)
-        elif reaction.emoji == "🦑":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="845947787673206794")
-                if role in user.roles:
-                        await client.remove_roles(user, role)
-        elif reaction.emoji == "🦁":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="845947449540739092")
-                if role in user.roles:
-                    await client.remove_roles(user, role)
-        elif reaction.emoji == "🔪":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="845947863807688716")
-                if role in user.roles:
-                    await client.remove_roles(user, role)
-        elif reaction.emoji == "👻":
-            if umbrage in user.roles:
-                role = discord.utils.get(user.server.roles, id="845947323845836840")
-                if role in user.roles:
-                    await client.remove_roles(user, role)
-
-
-
-
+client = MyClient(intents =intents)
 client.run(getTok())
