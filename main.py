@@ -2,7 +2,6 @@ import os
 
 import discord
 import logging
-from keep_alive import keep_alive
 
 logging.basicConfig(filename='example.log', filemode='w', level=logging.DEBUG)
 
@@ -94,6 +93,5 @@ class MyClient(discord.Client):
                     await usr.remove_roles(role)
 
 
-keep_alive()
 client = MyClient(intents =intents)
-client.run(os.environ.get('SECRET_TOKEN'))
+client.run(os.getenv('SECRET_TOKEN'))
