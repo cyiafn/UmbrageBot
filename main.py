@@ -55,61 +55,61 @@ class MyClient(discord.Client):
             print("reaction added")
             umbrage = discord.utils.get(usr.guild.roles, id=843479518357880842)
             if emo == "🍰":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=843555520295469067)
-                    await usr.add_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=843555520295469067)
+                await usr.add_roles(role)
             elif emo == "🦑":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=845947787673206794)
-                    await usr.add_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=845947787673206794)
+                await usr.add_roles(role)
             elif emo == "🦁":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=845947449540739092)
-                    await usr.add_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=845947449540739092)
+                await usr.add_roles(role)
             elif emo == "🔪":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=845947863807688716)
-                    await usr.add_roles(role)
+            #if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=845947863807688716)
+                await usr.add_roles(role)
             elif emo == "👻":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=845947323845836840)
-                    await usr.add_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=845947323845836840)
+                await usr.add_roles(role)
             elif emo == "🦸‍♂️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961319304626207)
-                    await usr.add_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961319304626207)
+                await usr.add_roles(role)
             elif emo == "🪙":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961378204188693)
-                    await usr.add_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961378204188693)
+                await usr.add_roles(role)
             elif emo == "🎟️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961404850602024)
-                    await usr.add_roles(role)
+               # if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961404850602024)
+                await usr.add_roles(role)
             elif emo == "🕐":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961428406861876)
-                    await usr.add_roles(role)
+               # if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961428406861876)
+                await usr.add_roles(role)
             elif emo == "💸":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961456403447869)
-                    await usr.add_roles(role)
+              #  if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961456403447869)
+                await usr.add_roles(role)
             elif emo == "👁️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961488207675412)
-                    await usr.add_roles(role)
+               # if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961488207675412)
+                await usr.add_roles(role)
             elif emo == "🌥️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961512732688426)
-                    await usr.add_roles(role)
+               # if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961512732688426)
+                await usr.add_roles(role)
             elif emo == "⛅":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961535616417792)
-                    await usr.add_roles(role)
+               # if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961535616417792)
+                await usr.add_roles(role)
             elif emo == "🌤️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961555648806932)
-                    await usr.add_roles(role)
+               # if umbrage in usr.roles:
+                role = discord.utils.get(usr.guild.roles, id=854961555648806932)
+                await usr.add_roles(role)
 
     async def on_raw_reaction_remove(self, RawReactionActionEvent):
         
@@ -122,61 +122,61 @@ class MyClient(discord.Client):
             print("reaction removed")
             umbrage = discord.utils.get(guild.roles, id=843479518357880842)
             if emo == "🍰":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(guild.roles, id=843555520295469067)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=843555520295469067)
+                await usr.remove_roles(role)
             elif emo == "🦑":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(guild.roles, id=845947787673206794)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=845947787673206794)
+                await usr.remove_roles(role)
             elif emo == "🦁":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(guild.roles, id=845947449540739092)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=845947449540739092)
+                await usr.remove_roles(role)
             elif emo == "🔪":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(guild.roles, id=845947863807688716)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=845947863807688716)
+                await usr.remove_roles(role)
             elif emo == "👻":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(guild.roles, id=845947323845836840)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=845947323845836840)
+                await usr.remove_roles(role)
             elif emo == "🦸‍♂️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961319304626207)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961319304626207)
+                await usr.remove_roles(role)
             elif emo == "🪙":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961378204188693)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961378204188693)
+                await usr.remove_roles(role)
             elif emo == "🎟️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961404850602024)
-                    await usr.remove_roles(role)
+               # if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961404850602024)
+                await usr.remove_roles(role)
             elif emo == "🕐":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961428406861876)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961428406861876)
+                await usr.remove_roles(role)
             elif emo == "💸":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961456403447869)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961456403447869)
+                await usr.remove_roles(role)
             elif emo == "👁️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961488207675412)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961488207675412)
+                await usr.remove_roles(role)
             elif emo == "🌥️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961512732688426)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961512732688426)
+                await usr.remove_roles(role)
             elif emo == "⛅":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961535616417792)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961535616417792)
+                await usr.remove_roles(role)
             elif emo == "🌤️":
-                if umbrage in usr.roles:
-                    role = discord.utils.get(usr.guild.roles, id=854961555648806932)
-                    await usr.remove_roles(role)
+                #if umbrage in usr.roles:
+                role = discord.utils.get(guild.roles, id=854961555648806932)
+                await usr.remove_roles(role)
 
 client = MyClient(intents =intents)
 client.run(os.getenv('SECRET_TOKEN'))
