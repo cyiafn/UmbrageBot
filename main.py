@@ -184,5 +184,4 @@ class MyClient(discord.Client):
                 await usr.remove_roles(role)
 
 client = MyClient(intents =intents)
-client.run("ODQ1OTk3MDUzNTIzMjYzNTE4.YKpGJw.XEtLx5QjZyuVTivVC4CSuZ0CeT8")
-#client.run(os.getenv('SECRET_TOKEN'))
+client.run(os.getenv('SECRET_TOKEN'))
