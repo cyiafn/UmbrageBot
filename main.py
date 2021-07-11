@@ -51,7 +51,7 @@ class MyClient(discord.Client):
         usr = RawReactionActionEvent.member
         emo = RawReactionActionEvent.emoji.name
         msg = RawReactionActionEvent.message_id
-        if msg == 846001584516104292:
+        if msg == 863709395334332436:
             print("reaction added")
             umbrage = discord.utils.get(usr.guild.roles, id=843479518357880842)
             if emo == "🍰": #ok
@@ -120,7 +120,7 @@ class MyClient(discord.Client):
         msg = RawReactionActionEvent.message_id
         guild = self.get_guild(RawReactionActionEvent.guild_id)
         usr = guild.get_member(usr)
-        if msg == 846001584516104292:
+        if msg == 863709395334332436:
             print("reaction removed")
             umbrage = discord.utils.get(guild.roles, id=843479518357880842)
             if emo == "🍰":
