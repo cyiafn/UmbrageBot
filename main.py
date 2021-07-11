@@ -102,8 +102,9 @@ class MyClient(discord.Client):
                # if umbrage in usr.roles:
                 role = discord.utils.get(usr.guild.roles, id=854961535616417792)
                 await usr.add_roles(role)
-            elif RawReactionActionEvent.emoji.id == 863443911225770004:
+            elif emo =="flemmagachi":
                # if umbrage in usr.roles:
+                print("here")
                 role = discord.utils.get(usr.guild.roles, id=854961555648806932)
                 await usr.add_roles(role)
             elif emo=="🌓":
@@ -171,7 +172,7 @@ class MyClient(discord.Client):
                 #if umbrage in usr.roles:
                 role = discord.utils.get(guild.roles, id=854961535616417792)
                 await usr.remove_roles(role)
-            elif RawReactionActionEvent.emoji.id == 863443911225770004:
+            elif emo =="flemmagachi":
                 #if umbrage in usr.roles:
                 role = discord.utils.get(guild.roles, id=854961555648806932)
                 await usr.remove_roles(role)
@@ -183,4 +184,5 @@ class MyClient(discord.Client):
                 await usr.remove_roles(role)
 
 client = MyClient(intents =intents)
-client.run(os.getenv('SECRET_TOKEN'))
+client.run("ODQ1OTk3MDUzNTIzMjYzNTE4.YKpGJw.XEtLx5QjZyuVTivVC4CSuZ0CeT8")
+#client.run(os.getenv('SECRET_TOKEN'))
