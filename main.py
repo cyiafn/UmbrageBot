@@ -26,7 +26,7 @@ class MyClient(discord.Client):
         await member.add_roles(role)
 
     async def on_message(self,message):
-        if message.channel.id == 844558702103232563:
+        if message.channel.id == 878230174020300820:
             print("guild app")
             role = discord.utils.get(message.author.guild.roles, id=844532858118733824)
             if role in message.author.roles:
